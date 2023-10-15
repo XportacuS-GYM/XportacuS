@@ -28,3 +28,4 @@ Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 
+
