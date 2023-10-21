@@ -40,7 +40,8 @@ class RegistroRequest extends FormRequest
             'email.required' => 'El email es obligatorio',
             'email.email' => 'El email no es valido',
             'email.unique' => 'El usuario ya esta registrado',
-            'password' => 'El password es obligatorio'
+            'password' => 'El password debe contener al menos 8 caracteres, un simbolo y un numero',
+            'password.required' => 'El password es obligatorio'
         ];
     }
 }

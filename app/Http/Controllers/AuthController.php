@@ -31,7 +31,7 @@ class AuthController extends Controller
         $data = $request->validated();
 
         //revisar el password
-        if(!Auth::attempt([$data])){
+        if(!Auth::attempt($data)){
             return response([
                 'errors' => ['El email o el password son incorrectos']
             ], 422);
