@@ -14,11 +14,16 @@ class AuthController extends Controller
     public function register(RegistroRequest $request){
         
         $data = $request->validated();
-        //Realizar las migraciones para que funciones
+
         $user = User::create([
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password'])
+            'password' => bcrypt($data['password']),
+            'address' => $data['address'],
+            'age' => $data['age'], 
+            'statusSubscription' => 0,
+            'trainingLevel' => $data['trainingLevel']
         ]);
 
         return [
@@ -30,7 +35,6 @@ class AuthController extends Controller
     public function login(LoginRequest $request){
         $data = $request->validated();
 
-        //revisar el password
         if(!Auth::attempt($data)){
             return response([
                 'errors' => ['El email o el password son incorrectos']
@@ -45,7 +49,7 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request){
-    //logout 
+
         $user = $request->user();
         $user->currentAccessToken()->delete();
 

@@ -24,7 +24,11 @@ class RegistroRequest extends FormRequest
     {
         return [
             'name' => ['required','string'],
+            'lastname' => ['required', 'string'],
+            'age' => ['required', 'integer'],
+            'address' => ['required', 'string'],
             'email' => ['required', 'email', 'unique:users,email'],
+            'trainingLevel' => 'required',
             'password' => [
                 'required',
                 'confirmed',
@@ -37,6 +41,9 @@ class RegistroRequest extends FormRequest
     {
         return [
             'name' => 'El nombre es obligatorio',
+            'lastname' => 'El apellido es obligatorio',
+            'age' => 'La edad es obligatoria',
+            'address' => 'La dirección es obligatoria',
             'email.required' => 'El email es obligatorio',
             'email.email' => 'El email no es valido',
             'email.unique' => 'El usuario ya esta registrado',
