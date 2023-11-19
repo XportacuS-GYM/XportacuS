@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,5 +29,8 @@ Route::middleware('auth:sanctum')->group(function(){
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+//Administrador
+Route::get('/validaClave',[AdmController::class,'enviaClave']);
+Route::get('/validaSuperClave',[AdmController::class,'enviaSuperClave']);
 
 
