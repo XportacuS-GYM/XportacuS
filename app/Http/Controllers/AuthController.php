@@ -22,8 +22,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'address' => $data['address'],
             'age' => $data['age'], 
-            'statusSubscription' => 0,
-            'trainingLevel' => $data['trainingLevel']
+            'statusSubscription' => 0
         ]);
 
         return [
@@ -44,7 +43,7 @@ class AuthController extends Controller
         $user = Auth::user();
         return [
             'token' => $user->createToken('token')->plainTextToken,
-            'id' => $user->id
+            'email' => $user['email']
         ];
     }
 
