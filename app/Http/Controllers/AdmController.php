@@ -33,4 +33,12 @@ class AdmController extends Controller
         return $respuesta;
     }
 
+    public function obtenerUsuario(Request $request){
+        $email = $request->email;
+
+        $usuario = $this->dbUsers->getUserQR($email);
+
+        return $usuario;
+    }
+
 }

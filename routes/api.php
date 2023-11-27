@@ -33,4 +33,5 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/validaClave',[AdmController::class,'enviaClave']);
 Route::get('/validaSuperClave',[AdmController::class,'enviaSuperClave']);
 
-
+//
+Route::get('/infoUsuario',[AdmController::class,'obtenerUsuario']);
