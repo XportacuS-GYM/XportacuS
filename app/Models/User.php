@@ -24,8 +24,7 @@ class User extends Authenticatable
         'address',
         'email',
         'password',
-        'statusSubscription',
-        'trainingLevel'
+        'statusSubscription'
     ];
 
     /**

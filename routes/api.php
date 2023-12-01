@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->group(function(){
     });
 
     Route::post('/logout', [AuthController::class, 'logout']);
-
+    Route::get('/infoUsuario',[AdmController::class,'obtenerUsuario']);
 });
 
 //Autenticacion 
@@ -34,4 +34,4 @@ Route::get('/validaClave',[AdmController::class,'enviaClave']);
 Route::get('/validaSuperClave',[AdmController::class,'enviaSuperClave']);
 
 //
-Route::get('/infoUsuario',[AdmController::class,'obtenerUsuario']);
+
