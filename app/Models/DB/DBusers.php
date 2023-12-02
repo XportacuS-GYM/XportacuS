@@ -2,7 +2,8 @@
 
 namespace App\Models\DB;
 
-use App\Models\Clases\Usuario;
+use App\Models\Clases\DatosBancarios;
+use App\Models\Clases\suscriptor;
 use Illuminate\Support\Facades\DB;
 
 class DBusers
@@ -19,7 +20,7 @@ class DBusers
         $users = DB::select('select*from users where email = ?',[$email]);
 
         foreach ($users as $user){
-            $usuario = new Usuario(
+            $usuario = new suscriptor(
                 $user->name,
                 $user->lastname,
                 $user->email,
@@ -42,6 +43,16 @@ class DBusers
 
 
         return $info;
+    }
+
+    public function registroDatosB(DatosBancarios $datosB)
+    {
+        
+    }
+
+    public function ActualizaDatos($email)
+    {
+        DB::update('update users set statusSubscription = "activo" where email = ?',[$email]);
     }
 }
 

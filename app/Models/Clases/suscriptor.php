@@ -2,8 +2,9 @@
 
 namespace App\Models\Clases;
 
+use App\Models\DB\DBusers;
 
-class Usuario{
+class suscriptor{
     private String $name, $lastname, $email, $address, $statusSubscription, $subscriptionDate;
     private int $age;
 
@@ -88,5 +89,12 @@ class Usuario{
     public function setAge(int $age)
     {
         $this->age = $age;
+    }
+
+    public function setActivo(String $status)
+    {
+        $this->statusSubscription = $status;
+        $db = new DBusers;
+        $db->ActualizaDatos($this->email);
     }
 }
