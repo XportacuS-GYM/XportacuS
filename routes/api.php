@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdmController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\compraArtController;
 use App\Http\Controllers\compraController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,5 +36,6 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/validaClave',[AdmController::class,'enviaClave']);
 Route::get('/validaSuperClave',[AdmController::class,'enviaSuperClave']);
 
-//
+
+Route::post('/compraArt',[compraArtController::class,'setArticulos']);
 
