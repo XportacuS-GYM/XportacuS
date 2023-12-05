@@ -18,24 +18,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->group(function(){
-    Route::get('/user', function(Request $request){
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function (Request $request) {
         return $request->user();
     });
 
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/infoUsuario',[AdmController::class,'obtenerUsuario']);
+    Route::post('/compraArt', [compraArtController::class, 'setArticulos']);
     Route::post('/pago', [compraController::class, 'inicioCompra']);
+
+    Route::middleware('Admin')->group(function () {
+
+        Route::get('/infoUsuario', [AdmController::class, 'obtenerUsuario']);
+    });
 });
+
+
 
 //Autenticacion 
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-//Administrador
-Route::get('/validaClave',[AdmController::class,'enviaClave']);
-Route::get('/validaSuperClave',[AdmController::class,'enviaSuperClave']);
 
 
-Route::post('/compraArt',[compraArtController::class,'setArticulos']);
+
 

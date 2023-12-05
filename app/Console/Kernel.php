@@ -7,6 +7,10 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+    // Agregué este es para ponerle un alias al Middleware lo agregué en routes
+    protected $routeMiddleware = [
+        'UsuarioAdimin' => \App\Http\Middleware\UsuarioAdmin::class,
+    ];
     /**
      * Define the application's command schedule.
      */
