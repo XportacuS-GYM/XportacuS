@@ -23,8 +23,7 @@ class AdmController extends Controller
 
     public function SolicitarListaSuscriptores()
     {
-        $usuarios = $this->adm->SolicitarListaSuscriptores();
-        return $usuarios;
+
     }
 
     public function obtenerUsuario(Request $request){

@@ -35,7 +35,7 @@ class DBusers
             'name' => $usuario->getName(),
             'lastname' => $usuario->getLastname(),
             'email' => $usuario->getEmail(),
-            'address' => $usuario->getAddres(),
+            'addess' => $usuario->getAddres(),
             'age' => $usuario->getAge(),
             'statusSubscription' => $usuario->getStatusSubscription(),
             'subscriptionDate' => $usuario->getSubscriptionDate()

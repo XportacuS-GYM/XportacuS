@@ -27,17 +27,17 @@ class adm{
                 $user->statusSubscription,
                 $user->subscriptionDate
             );
-
-            $arrayUsuarios [] = [
-                'name' => $usuario->getName(),
-                'lastname' => $usuario->getLastname(),
-                'email' => $usuario->getEmail(),
-                'address' => $usuario->getAddres(),
-                'age' => $usuario->getAge(),
-                'statusSubscription' => $usuario->getStatusSubscription(),
-                'subscriptionDate' => $usuario->getSubscriptionDate()
-            ];
         }
+
+        $arrayUsuarios [] = [
+            'name' => $usuario->getName(),
+            'lastname' => $usuario->getLastname(),
+            'email' => $usuario->getEmail(),
+            'addess' => $usuario->getAddres(),
+            'age' => $usuario->getAge(),
+            'statusSubscription' => $usuario->getStatusSubscription(),
+            'subscriptionDate' => $usuario->getSubscriptionDate()
+        ];
 
         return $arrayUsuarios;
     }

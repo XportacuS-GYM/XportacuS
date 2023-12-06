@@ -22,17 +22,13 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'address' => $data['address'],
             'age' => $data['age'], 
-            'statusSubscription' => 'inactivo',
+            'statusSubscription' => 0,
             'role' => 'suscriptor',
         ]);
 
         return [
             'token' => $user->createToken('token')->plainTextToken,
-            'email' => $user['email'],
-            'name' => $user['name'],
-            'address' => $user['address'],
-            'age' => $user['age'],
-            'statusSubscription' => $user['statusSubscription']
+            'user' => $user
         ];
     }
 
@@ -48,11 +44,7 @@ class AuthController extends Controller
         $user = Auth::user();
         return [
             'token' => $user->createToken('token')->plainTextToken,
-            'email' => $user['email'],
-            'name' => $user['name'],
-            'address' => $user['address'],
-            'age' => $user['age'],
-            'statusSubscription' => $user['statusSubscription']
+            'user' => $user,
         ];
     }
 
