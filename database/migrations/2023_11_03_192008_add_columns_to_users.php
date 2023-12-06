@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('age');
             $table->binary('statusSubscription');
             $table->dateTime('subscriptionDate')->nullable();
-            $table->integer('trainingLevel');
         });
     }
 
