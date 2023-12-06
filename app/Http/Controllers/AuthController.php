@@ -22,7 +22,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'address' => $data['address'],
             'age' => $data['age'], 
-            'statusSubscription' => 'inactivo',
+            'statusSubscription' => 0,
             'role' => 'suscriptor',
         ]);
 
@@ -33,7 +33,6 @@ class AuthController extends Controller
             'address' => $user['address'],
             'age' => $user['age'],
             'statusSubscription' => $user['statusSubscription']
-            
         ];
     }
 
