@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         if: steps.check_files.outputs.files_exists == 'true'
         run: php --version
-          composer config "https-basic.nova.laravel.com" "${{ secrets.NOVA_USER }}" "${{ secrets.NOVA_KEY }}"
+          composer config "https-basic.nova.laravel.com" "${{ secrets.NOVA_USER }}" "${{ secrets.NOVA_PASSWORD }}"
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
