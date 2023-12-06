@@ -28,7 +28,6 @@ class RegistroRequest extends FormRequest
             'age' => ['required', 'integer'],
             'address' => ['required', 'string'],
             'email' => ['required', 'email', 'unique:users,email'],
-            'trainingLevel' => 'required',
             'password' => [
                 'required',
                 'confirmed',
