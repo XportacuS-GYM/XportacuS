@@ -28,7 +28,11 @@ class AuthController extends Controller
 
         return [
             'token' => $user->createToken('token')->plainTextToken,
-            'user' => $user
+            'email' => $user['email'],
+            'name' => $user['name'],
+            'address' => $user['address'],
+            'age' => $user['age'],
+            'statusSubscription' => $user['statusSubscription']
         ];
     }
 
@@ -44,7 +48,11 @@ class AuthController extends Controller
         $user = Auth::user();
         return [
             'token' => $user->createToken('token')->plainTextToken,
-            'user' => $user,
+            'email' => $user['email'],
+            'name' => $user['name'],
+            'address' => $user['address'],
+            'age' => $user['age'],
+            'statusSubscription' => $user['statusSubscription']
         ];
     }
 
