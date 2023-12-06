@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clases\adm;
 use App\Models\DB\DBadm;
 use App\Models\DB\DBusers;
 use Illuminate\Http\Request;
@@ -11,26 +12,18 @@ class AdmController extends Controller
 
     private DBusers $dbUsers;
     private DBadm $dbAdm;
+    private adm $adm;
 
     public function __construct()
     {
         $this->dbUsers = new DBusers;
         $this->dbAdm = new DBadm;
+        $this->adm = new adm;
     }
 
-    public function enviaClave(Request $request){
+    public function SolicitarListaSuscriptores()
+    {
 
-        $clave = $request->clave;
-        $respuesta = $this->dbAdm->validaClave($clave);
-        
-        return $respuesta;
-    }
-
-    public function enviaSuperClave(Request $request){
-        $superClave = $request->clave;
-        $respuesta = $this->dbAdm->validaClaveSuper($superClave);
-
-        return $respuesta;
     }
 
     public function obtenerUsuario(Request $request){

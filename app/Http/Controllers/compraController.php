@@ -10,10 +10,10 @@ class compraController extends Controller
     
     public function inicioCompra(Request $request){
 
-        $numeroTarjeta = $request->numeroTarjeta;
-        $fechaCaducidad = $request->fechaCaducidad;
-        $CVV = $request->CVV;
-        $titular = $request->titular;
+        $numeroTarjeta = 00000000000;
+        $fechaCaducidad = '00-00-0000';
+        $CVV = 111;
+        $titular = 'Usuario anonimo';
 
         $compra = new Compra;
 
