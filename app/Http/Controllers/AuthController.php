@@ -33,6 +33,7 @@ class AuthController extends Controller
             'address' => $user['address'],
             'age' => $user['age'],
             'statusSubscription' => $user['statusSubscription']
+            
         ];
     }
 
