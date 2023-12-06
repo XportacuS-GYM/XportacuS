@@ -28,8 +28,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/pago', [compraController::class, 'inicioCompra']);
 
     Route::middleware('Admin')->group(function () {
-
         Route::get('/infoUsuario', [AdmController::class, 'obtenerUsuario']);
+        Route::get('/infoUsuarios', [AdmController::class, 'SolicitarListaSuscriptores']);
     });
 });
 
